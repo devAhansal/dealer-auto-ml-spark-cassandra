@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    ports:
+      - "9042:9042"  # Cassandra CQL port
+    environment:
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+
+  spark:
+    image: apache/spark:latest
+    container_name: spark
+    user: root  # Run as root
+    ports:
+      - "8888:8888"  # Jupyter Notebook
+      - "4040:4040"  # Spark UI
+    volumes:
+      - ./notebooks:/opt/spark/work-dir  # Mount a local directory for notebooks
+      - ./data:/opt/spark/work-dir
+    depends_on:
+      - cassandra
+    command: >
+      /bin/bash -c "
+      apt update &&
+      apt install -y python3-pip &&
+      pip install jupyter numpy pandas cqlsh matplotlib seaborn &&
+      /opt/spark/bin/pyspark --packages com.datastax.spark:spark-cassandra-connector_2.12:3.2.0 --master local[*] --conf spark.driver.memory=2g --conf spark.executor.memory=2g &&
+      jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
+    environment:
+      - PYTHONPATH=/opt/spark/python/lib/pyspark.zip:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+
+volumes:
+  cassandra_data:
