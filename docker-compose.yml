@@ -18,16 +18,16 @@ services:
     ports:
       - "8888:8888"  # Jupyter Notebook
       - "4040:4040"  # Spark UI
+      - "8501:8501"  # Streamlit APP
     volumes:
-      - ./notebooks:/opt/spark/work-dir  # Mount a local directory for notebooks
-      - ./data:/opt/spark/work-dir
+      - ./:/opt/spark/work-dir  # Mount a local directory for notebooks
     depends_on:
       - cassandra
     command: >
       /bin/bash -c "
       apt update &&
       apt install -y python3-pip &&
-      pip install jupyter numpy pandas cqlsh matplotlib seaborn &&
+      pip install jupyter numpy pandas cqlsh matplotlib seaborn streamlit&&
       /opt/spark/bin/pyspark --packages com.datastax.spark:spark-cassandra-connector_2.12:3.2.0 --master local[*] --conf spark.driver.memory=2g --conf spark.executor.memory=2g &&
       jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
     environment:
