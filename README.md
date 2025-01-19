@@ -54,7 +54,8 @@ Ce projet vise à aider un concessionnaire automobile à analyser et prédire le
 -  Utilisez le token fourni dans les logs pour vous connecter.
 4. **Exécuter les Notebooks** 
 -  Ouvrez et exécutez les notebooks dans le dossier notebooks/.
-
+5. **Accéder à cassandra**
+-cqlsh 172.18.0.2 9042 -u cassandra -p cassandra
 
 ## **Auteurs**
 AHANSAL SALAHEDDINE

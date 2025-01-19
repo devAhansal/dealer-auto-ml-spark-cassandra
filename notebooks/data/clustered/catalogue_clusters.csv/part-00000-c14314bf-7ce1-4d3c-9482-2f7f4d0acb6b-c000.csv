@@ -1,0 +1,19 @@
+marque,nom,couleur,puissance,longueur,nbplaces,nbportes,prix,prediction
+Nissan,Almera 1.8,blanc,115,moyenne,5,5,16450.000000000000000000,2
+Daihatsu,Cuore 1.0,blanc,58,courte,5,3,8850.000000000000000000,1
+Renault,Espace 2.0T,bleu,165,longue,7,5,30350.000000000000000000,3
+Honda,FR-V 1.7,blanc,125,longue,7,5,19550.000000000000000000,3
+Volkswagen,Golf 2.0 FSI,blanc,150,moyenne,5,5,22900.000000000000000000,2
+Renault,Laguna 2.0T,blanc,170,longue,5,5,27300.000000000000000000,2
+Dacia,Logan 1.6 MPI,blanc,90,moyenne,5,5,7500.000000000000000000,2
+Hyundaï,Matrix 1.6,blanc,103,longue,7,5,15960.000000000000000000,3
+Nissan,Maxima 3.0 V6,blanc,200,très longue,5,5,30000.000000000000000000,0
+Renault,Megane 2.0 16V,blanc,135,moyenne,5,5,22350.000000000000000000,2
+Volkswagen,New Beatle 1.8,bleu,110,moyenne,5,5,26630.000000000000000000,2
+Kia,Picanto 1.1,blanc,65,courte,5,5,8990.000000000000000000,2
+Volkswagen,Polo 1.2 6V,rouge,55,courte,5,3,12200.000000000000000000,1
+Nissan,Primera 1.6,blanc,109,longue,5,5,18650.000000000000000000,2
+Skoda,Superb 2.8 V6,blanc,193,très longue,5,5,31790.000000000000000000,0
+Seat,Toledo 1.6,blanc,102,longue,5,5,18880.000000000000000000,2
+Volkswagen,Touran 2.0 FSI,blanc,150,longue,7,5,27340.000000000000000000,3
+Renault,Vel Satis 3.5 V6,bleu,245,très longue,5,5,49200.000000000000000000,0
